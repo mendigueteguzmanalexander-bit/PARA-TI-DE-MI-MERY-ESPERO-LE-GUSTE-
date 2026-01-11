@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mery 🌙💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+min-height:100vh;
+background:radial-gradient(circle at top,#3b1b6d,#120136,#000);
+font-family:'Playfair Display',serif;
+color:#fff;
+text-align:center;
+overflow-x:hidden
+}
+
+/* 🌙 LUNA */
+.luna{
+position:fixed;
+top:6%;
+right:8%;
+width:110px;
+height:110px;
+border-radius:50%;
+background:radial-gradient(circle,#fff,#eee,#bbb);
+box-shadow:0 0 60px rgba(255,255,255,.4);
+opacity:.9;
+pointer-events:none;
+}
+
+/* ⭐ ESTRELLAS */
+.estrella{
+position:fixed;
+color:#fff;
+opacity:.6;
+animation:brillar 4s infinite alternate;
+pointer-events:none
+}
+@keyframes brillar{
+from{opacity:.2}
+to{opacity:1}
+}
+
+/* ✨ DESTELLOS */
+.destello{
+position:fixed;
+color:gold;
+opacity:.6;
+animation:flotar 5s linear infinite;
+pointer-events:none
+}
+@keyframes flotar{
+from{transform:translateY(0) scale(.7)}
+to{transform:translateY(-120px) scale(1.2);opacity:0}
+}
+
+/* 💌 SOBRE */
+.carta-cerrada{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center
+}
+.sobre{
+width:320px;
+height:200px;
+background:#fff;
+border-radius:18px;
+position:relative;
+box-shadow:0 0 40px pink;
+overflow:hidden
+}
+.tapa{
+position:absolute;
+width:100%;
+height:100%;
+background:#f6c1d1;
+clip-path:polygon(0 0,50% 60%,100% 0);
+transform-origin:top;
+transition:transform 1.5s ease
+}
+.sobre.abierto .tapa{transform:rotateX(180deg)}
+.sobre button{
+position:absolute;
+bottom:28px;
+left:50%;
+transform:translateX(-50%);
+padding:14px 35px;
+border-radius:30px;
+border:none;
+font-size:1.05em;
+cursor:pointer;
+background:#c2185b;
+color:#fff;
+box-shadow:0 0 20px pink
+}
+
+/* CONTENIDO */
+.contenido{display:none;padding:25px 15px}
+h1{
+font-family:'Parisienne',cursive;
+font-size:clamp(3em,8vw,4em);
+color:#ffd1dc;
+margin-bottom:10px
+}
+
+/* 🌹 MARCO CON ROSAS */
+.marco{
+margin:25px auto;
+width:240px;
+height:340px;
+border-radius:50% / 40%;
+padding:10px;
+background:linear-gradient(135deg,#ffd700,#fff1a8,#ffd700);
+box-shadow:0 0 35px gold;
+animation:latir 4s infinite;
+position:relative
+}
+@keyframes latir{
+0%{transform:scale(1)}
+50%{transform:scale(1.03)}
+100%{transform:scale(1)}
+}
+
+/* 🌹 ROSAS */
+.rosa{
+position:absolute;
+font-size:22px
+}
+.r1{top:-15px;left:50%;transform:translateX(-50%)}
+.r2{bottom:-15px;left:50%;transform:translateX(-50%)}
+.r3{top:50%;left:-15px;transform:translateY(-50%)}
+.r4{top:50%;right:-15px;transform:translateY(-50%)}
+
+/* 📷 FOTO */
+.foto{
+width:100%;
+height:100%;
+border-radius:50% / 40%;
+overflow:hidden;
+background:#000
+}
+.foto img{
+width:100%;
+height:100%;
+object-fit:contain
+}
+
+/* 💌 CARTA */
+.carta{
+max-width:520px;
+margin:30px auto;
+padding:35px;
+background:rgba(255,255,255,.97);
+color:#4a2c2a;
+border-radius:30px;
+line-height:2.1;
+font-size:1.05em
+}
+.carta p{
+opacity:0;
+transform:translateY(15px);
+animation:aparecer 1.4s ease forwards
+}
+.carta p:nth-child(1){animation-delay:.3s}
+.carta p:nth-child(2){animation-delay:1.2s}
+.carta p:nth-child(3){animation-delay:2.1s}
+.carta p:nth-child(4){animation-delay:3s}
+
+@keyframes aparecer{
+to{opacity:1;transform:translateY(0)}
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:480px){
+.marco{width:210px;height:300px}
+.luna{width:80px;height:80px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="luna"></div>
+
+<audio id="musica" loop>
+<source src="MUSICAPARAMERY.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SOBRE -->
+<div class="carta-cerrada" id="cerrada">
+<div class="sobre" id="sobre">
+<div class="tapa"></div>
+<button onclick="abrirCarta()">💌 Con cariño para ti, preciosa</button>
+</div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenido" id="contenido">
+
+<h1>Mery</h1>
+
+<div class="marco">
+<div class="rosa r1">🌹</div>
+<div class="rosa r2">🌹</div>
+<div class="rosa r3">🌹</div>
+<div class="rosa r4">🌹</div>
+
+<div class="foto">
+<img src="MERYTEAMO.png" alt="Mery">
+</div>
+</div>
+
+<div class="carta">
+<p>Mery…</p>
+
+<p>No sé en qué momento sucedió,  
+pero sin darme cuenta  
+mi corazón empezó a pensarte.</p>
+
+<p>Cada sonrisa tuya, cada detalle,  
+se fue quedando en mí  
+de una forma muy especial.</p>
+
+<p>No escribo esto para apresurar nada,  
+solo para ser sincero contigo  
+y decirte lo importante que eres para mí.</p>
+
+<p><strong>Con todo mi cariño,<br>Alexander 💖</strong></p>
+</div>
+
+</div>
+
+<script>
+function abrirCarta(){
+document.getElementById("sobre").classList.add("abierto");
+setTimeout(()=>{
+document.getElementById("cerrada").style.display="none";
+document.getElementById("contenido").style.display="block";
+document.getElementById("musica").play().catch(()=>{});
+},1500)
+}
+
+/* ⭐ ESTRELLAS */
+setInterval(()=>{
+const e=document.createElement("div");
+e.className="estrella";
+e.innerHTML="✨";
+e.style.left=Math.random()*100+"vw";
+e.style.top=Math.random()*100+"vh";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),4000);
+},700);
+
+/* ✨ DESTELLOS */
+setInterval(()=>{
+const d=document.createElement("div");
+d.className="destello";
+d.innerHTML="✦";
+d.style.left=Math.random()*100+"vw";
+d.style.bottom="0";
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),5000);
+},900);
+</script>
+
+</body>
+</html>
+
